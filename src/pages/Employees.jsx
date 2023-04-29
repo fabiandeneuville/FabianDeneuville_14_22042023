@@ -1,7 +1,9 @@
+import Header from "../components/Header";
+
 function Employees(){
     return (
         <>
-            <h1>Employee</h1>
+        <Header/>
         </>
     );
 }

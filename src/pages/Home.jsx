@@ -1,11 +1,11 @@
 import Header from "../components/Header";
-import Form from "../components/Form";
+import CreateEmployeeForm from "../components/CreateEmployeeForm";
 
 function Home(){
     return (
         <>
             <Header/>
-            <Form/>
+            <CreateEmployeeForm/>
         </>
     );
 }
