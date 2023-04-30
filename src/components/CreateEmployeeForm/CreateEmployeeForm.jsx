@@ -1,6 +1,8 @@
 import DatePicker from "fd-react-datepicker";
 import CustomDropDown from "../CustomDropDown/CustomDropDown";
 import { Formik } from "formik";
+import { useDispatch } from "react-redux";
+import { createEmployeeStarted } from "../../store/actions";
 import * as Yup from 'yup';
 import { 
     FormContainer, 
@@ -25,11 +27,28 @@ const validationSchema = Yup.object().shape({
     department: Yup.string().required('Required field')
 });
 
-const submitForm = (values) => {
-    console.log(values);
-}
 
 function CreateEmployeeForm(){
+
+    const Dispatch = useDispatch()
+    
+    const submitForm = (values) => {
+        console.log(values);
+        const employee = {
+            firstName: values.firstName,
+            lastName: values.lastName,
+            birthDate: values.birthDate,
+            startDate: values.startDate,
+            address: {
+                street: values.street,
+                city: values.city,
+                state: values.state,
+                zipCode: values.zipCode
+            },
+            department: values.department
+        }
+        Dispatch(createEmployeeStarted(employee))
+    }
 
     return (
         <FormContainer>
@@ -44,8 +63,8 @@ function CreateEmployeeForm(){
                 street: '',
                 city: '',
                 zipCode: '',
-                state: '',
-                department: ''
+                state: states[0],
+                department: departments[0]
             }}
             onSubmit={(values, errors) => submitForm(values, errors)}
             >
@@ -142,7 +161,10 @@ function CreateEmployeeForm(){
                             options={states}
                             selected={states[0]}
                             onChange={handleChange}
-                        />
+                            />
+                            {errors.state && 
+                                <p>ERROR</p>
+                            }
                     </InputGroup>
                         <InputGroup>
                             <Label

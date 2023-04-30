@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { RouterProvider } from 'react-router-dom';
-import router from './router.jsx';
 import { GlobalStyle } from './GlobalStyle.js';
+import { Provider } from 'react-redux';
+import App from './App.jsx';
+import store from './store/store.js';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <GlobalStyle/>
-    <RouterProvider router={router}/>
+    <Provider store={store}>
+      <GlobalStyle/>
+      <App/>
+    </Provider>
   </React.StrictMode>
 );
