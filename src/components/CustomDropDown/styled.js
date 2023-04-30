@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const DropDownSelect = styled.div`
     border: 1px solid #333;
     cursor: pointer;
-    position: relative;
 `;
 
 export const Selected = styled.div`
@@ -12,11 +11,12 @@ export const Selected = styled.div`
 
 export const DropDownSelectList = styled.div`
     position: absolute;
-    z-index: 2;
     background: white;
     width: 100%;
     overflow-y: scroll;
     max-height: 200px;
+    max-width: 250px;
+    border: 1px solid black;
 `;
 
 export const Option = styled.div`

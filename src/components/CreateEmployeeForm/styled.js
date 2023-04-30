@@ -29,6 +29,7 @@ export const Label = styled.label`
 `;
 
 export const Fieldset = styled.fieldset`
+padding: 5px;
     margin: 10px 0 10px 0;
 `
 

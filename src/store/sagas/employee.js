@@ -5,13 +5,15 @@ import {
 
 import { 
     createEmployeeSuccess,
-    createEmployeeFailure
+    createEmployeeFailure,
+    displayModal
 } from '../actions';
 
 function* createEmployee(action){
     const { employee } = action.payload;
     try {
         yield put(createEmployeeSuccess(employee));
+        yield put(displayModal("Employee created !"))
     }
     catch(error){
         yield put(createEmployeeFailure(error));

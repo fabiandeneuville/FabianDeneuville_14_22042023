@@ -7,7 +7,6 @@ import {
 const initialState = {
     employees: [],
     error: null,
-    displayModal: false
 };
 
 function employee(state = initialState, action){
@@ -20,7 +19,7 @@ function employee(state = initialState, action){
             return {
                 ...state,
                 employees: [...state.employees, action.payload.employee],
-                displayModal: true
+                error: null
             }
         case CREATE_EMPLOYEE_FAILURE :
             return {

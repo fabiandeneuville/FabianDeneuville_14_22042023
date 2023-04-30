@@ -1,13 +1,13 @@
 import createSagaMiddleware from 'redux-saga';
 import { configureStore } from '@reduxjs/toolkit';
 
-import employeeReducer from './reducers/employee';
+import rootReducer from './reducers/root';
 import employeeSaga from './sagas/employee';
 
 const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
-    reducer: employeeReducer,
+    reducer: rootReducer,
     middleware: [sagaMiddleware]
 });
 

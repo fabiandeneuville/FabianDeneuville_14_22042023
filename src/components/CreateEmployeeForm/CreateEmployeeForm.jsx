@@ -32,7 +32,7 @@ function CreateEmployeeForm(){
 
     const Dispatch = useDispatch()
     
-    const submitForm = (values) => {
+    const submitForm = (values, { resetForm }) => {
         console.log(values);
         const employee = {
             firstName: values.firstName,
@@ -47,6 +47,7 @@ function CreateEmployeeForm(){
             },
             department: values.department
         }
+        resetForm()
         Dispatch(createEmployeeStarted(employee))
     }
 

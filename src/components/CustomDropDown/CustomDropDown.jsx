@@ -1,7 +1,6 @@
-/* eslint-disable react/prop-types */
+import PropTypes from 'prop-types';
 import { useState } from "react";
 import CaretDown from '../../assets/caret-down.svg'
-
 import { DropDownSelect, Selected, DropDownSelectList, Option, Caret } from "./styled";
 
 
@@ -59,3 +58,10 @@ function CustomDropDown(props) {
 }
 
 export default CustomDropDown;
+
+CustomDropDown.propTypes = {
+    options: PropTypes.array.isRequired,
+    selected: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
+    name: PropTypes.string.isRequired
+};
