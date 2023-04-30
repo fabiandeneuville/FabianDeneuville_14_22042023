@@ -1,5 +1,5 @@
-import Header from "../components/Header";
-import CreateEmployeeForm from "../components/CreateEmployeeForm";
+import Header from "../components/Header/Header";
+import CreateEmployeeForm from "../components/CreateEmployeeForm/CreateEmployeeForm";
 
 function Home(){
     return (

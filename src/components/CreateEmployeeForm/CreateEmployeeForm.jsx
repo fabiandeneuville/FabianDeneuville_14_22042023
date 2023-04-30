@@ -1,47 +1,17 @@
-import styled from "styled-components";
 import DatePicker from "fd-react-datepicker";
-import CustomDropDown from "../components/CustomDropDown";
+import CustomDropDown from "../CustomDropDown/CustomDropDown";
 import { Formik } from "formik";
 import * as Yup from 'yup';
-
-import { departments, states } from "../datas/datas";
-
-const FormContainer = styled.div`
-    width: 300px;
-    margin: 20px auto 100px auto;
-`;
-
-const Form = styled.form`
-    margin: 30px 0 auto 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-`;
-
-const InputGroup = styled.div`
-    display: flex;
-    flex-direction: column;
-`;
-
-const Input = styled.input`
-    padding: 5px;
-    font-size: 14px;
-`
-
-const Label = styled.label`
-    padding: 5px;
-    font-size: 12px;
-`;
-
-const Fieldset = styled.fieldset`
-    margin: 10px 0 10px 0;
-`
-
-const Button = styled.button`
-    margin: 15px 0 15px 0;
-    cursor: pointer;
-`;
+import { 
+    FormContainer, 
+    Form, 
+    InputGroup, 
+    Input, 
+    Label, 
+    Fieldset, 
+    Button 
+} from "./styled";
+import { departments, states } from "../../datas/datas";
 
 const validationSchema = Yup.object().shape({
     firstName: Yup.string().required('Required field'),
@@ -76,7 +46,6 @@ function CreateEmployeeForm(){
                 zipCode: '',
                 state: '',
                 department: ''
-
             }}
             onSubmit={(values, errors) => submitForm(values, errors)}
             >
@@ -208,12 +177,8 @@ function CreateEmployeeForm(){
                         Save
                     </Button>
                 </Form>
-
             )}
-
-
             </Formik>
-            
         </FormContainer>
     );
 }
