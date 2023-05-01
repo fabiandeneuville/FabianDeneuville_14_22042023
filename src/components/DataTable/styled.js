@@ -53,3 +53,21 @@ export const TableData = styled.td`
     width: 100px;
     text-align: center;
 `;
+
+export const SearchInputGroup = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 10px;
+`
+
+export const SearchInput = styled.input`
+    padding: 5px;
+    font-size: 12px;
+`;
+
+export const SearchLabel = styled.label`
+    padding: 5px;
+    font-size: 12px;
+`;
