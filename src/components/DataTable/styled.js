@@ -33,7 +33,6 @@ export const TableRow = styled.tr`
     display: flex;
     gap: 10px;
     justify-content: space-between;
-    margin-bottom: 10px;
     padding: 5px 0;
     display: flex;
     align-items: center;
@@ -47,6 +46,14 @@ export const TableRow = styled.tr`
         background-color: lightgray;
     }
 `;
+
+export const TableHeadData = styled.td`
+    font-size: 12px;
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+`
 
 export const TableData = styled.td`
     font-size: 12px;
@@ -70,4 +77,16 @@ export const SearchInput = styled.input`
 export const SearchLabel = styled.label`
     padding: 5px;
     font-size: 12px;
+`;
+
+export const CaretUp = styled.span`
+    position: absolute;
+    top: -3px;
+    right: 2px;
+`;
+
+export const CaretDown = styled.span`
+    position: absolute;
+    bottom: -3px;
+    right: 2px;
 `;

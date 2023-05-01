@@ -4,14 +4,23 @@ import {
     Table, 
     TableHead, 
     TableBody, 
+    TableHeadData,
     TableHeadRow, 
     TableRow, 
     TableData, 
     DataTableWrapper,
     SearchInputGroup,
     SearchInput,
-    SearchLabel
+    SearchLabel,
+    CaretUp,
+    CaretDown
 } from './styled';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+    faCaretUp, 
+    faCaretDown 
+} from '@fortawesome/free-solid-svg-icons';
 
 function EmployeesTable({data, columns}) {
 
@@ -35,6 +44,42 @@ function EmployeesTable({data, columns}) {
         setTableData(filteredResultsSorted);
     };
 
+    const sortResults = (index, mode) => {
+        const tableDataToSort = [...tableData]
+        const sortItems = Object.keys(data[0]);
+        const sortBy = sortItems[index];
+
+        if(mode === 'ascending'){
+            tableDataToSort.sort((a, b) => {
+                const _a = a[sortBy].toLowerCase();
+                const _b = b[sortBy].toLowerCase();
+                if(_a <_b){
+                    return -1;
+                }
+                if(_a > _b){
+                    return 1;
+                }
+                return 0;
+            })
+            setTableData(tableDataToSort);
+        } else if (mode === 'descending'){
+            tableDataToSort.sort((a, b) => {
+                const _a = a[sortBy].toLowerCase();
+                const _b = b[sortBy].toLowerCase();
+                if(_a >_b){
+                    return -1;
+                }
+                if(_a < _b){
+                    return 1;
+                }
+                return 0;
+            })
+            setTableData(tableDataToSort);
+        } else {
+            return;
+        }
+    }
+
     return (
         <>
             <SearchInputGroup>
@@ -47,9 +92,11 @@ function EmployeesTable({data, columns}) {
                         <TableHeadRow>
                             {columns.map((column, index) => {
                                 return (
-                                    <TableData key={index}>
+                                    <TableHeadData key={index}>
                                         {column}
-                                    </TableData>
+                                        <CaretUp><FontAwesomeIcon icon={faCaretUp} onClick={() => sortResults(index, 'ascending')}></FontAwesomeIcon></CaretUp>
+                                        <CaretDown><FontAwesomeIcon icon={faCaretDown} onClick={() => sortResults(index, 'descending')}></FontAwesomeIcon></CaretDown>
+                                    </TableHeadData>
                                 )
                             })}
                         </TableHeadRow>
