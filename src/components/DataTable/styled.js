@@ -64,7 +64,7 @@ export const TableData = styled.td`
 export const SearchInputGroup = styled.div`
     width: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     gap: 10px;
     padding: 10px;
 `
