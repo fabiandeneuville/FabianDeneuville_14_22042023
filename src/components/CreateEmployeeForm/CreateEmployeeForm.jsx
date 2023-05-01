@@ -27,7 +27,6 @@ const validationSchema = Yup.object().shape({
     department: Yup.string().required('Required field')
 });
 
-
 function CreateEmployeeForm(){
 
     const Dispatch = useDispatch()
@@ -39,12 +38,10 @@ function CreateEmployeeForm(){
             lastName: values.lastName,
             birthDate: values.birthDate,
             startDate: values.startDate,
-            address: {
-                street: values.street,
-                city: values.city,
-                state: values.state,
-                zipCode: values.zipCode
-            },
+            street: values.street,
+            city: values.city,
+            state: values.state,
+            zipCode: values.zipCode,
             department: values.department
         }
         resetForm()
