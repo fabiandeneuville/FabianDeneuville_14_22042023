@@ -21,13 +21,13 @@ Run the application with the following command :
 npm run dev
 ```
 
-To test Production build, run :
+To build Production build, run :
 
 ```
 npm run build
 ```
 
-amd 
+To preview projet after build, run :
 
 ```
 npm run preview
