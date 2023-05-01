@@ -38,7 +38,6 @@ function CustomDropDown(props) {
             <Caret src={CaretDown}/>
             {isOpen && (
                 <div>
-                    <hr />
                     <DropDownSelectList
                     onMouseLeave={() => setIsOpen(false)}
                     >
