@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const DataTableWrapper = styled.div`
     width: 100%;
-    margin: 25px auto 0 auto;
+    margin: 0px auto 0 auto;
     padding: 15px;
     overflow-x: scroll
 `;
@@ -17,7 +17,7 @@ export const TableHead = styled.thead`
 `;
 
 export const TableBody = styled.tbody`
-
+    padding: 10px 0;
 `;
 
 export const TableHeadRow = styled.tr`
@@ -26,7 +26,6 @@ export const TableHeadRow = styled.tr`
     gap: 10px;
     justify-content: space-between;
     padding-bottom: 10px;
-    margin-bottom: 10px;
 `;
 
 export const TableRow = styled.tr`

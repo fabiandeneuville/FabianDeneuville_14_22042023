@@ -21,10 +21,13 @@ function Employees(){
         <>
             <Header/>
             {employees.length ? (
-                <EmployeesTable
-                data={employees}
-                columns={columns}
-                />
+                <>
+                    <h2 style={{padding: '20px'}}>Current employees</h2>
+                    <EmployeesTable
+                    data={employees}
+                    columns={columns}
+                    />
+                </>
             ) : (
                 <h2 style={{padding: '20px'}}>No employees !</h2>
             )}

@@ -26,10 +26,3 @@ export const Option = styled.div`
         background-color: #F2F2F2
     }
 `;
-
-export const Caret = styled.img`
-    width: 10px;
-    position: absolute;
-    top: 7px;
-    right: 10px;
-`;

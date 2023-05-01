@@ -8,5 +8,6 @@ export const PageHeader = styled.header`
     gap: 15px;
     height: 100px;
     padding: 10px;
-    border-bottom: 1px solid #333;
+    background-color: #d9d9d9;
+    background-image: linear-gradient(315deg, #d9d9d9 0%, #f6f2f2 74%);
 `;

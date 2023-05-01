@@ -36,4 +36,12 @@ padding: 5px;
 export const Button = styled.button`
     margin: 15px 0 15px 0;
     cursor: pointer;
+    padding: 10px;
+    border-radius: 50px;
+    border: 1px solid gray;
+    font-weight: bold;
+    opacity: 1;
+    :hover {
+        opacity: 0.8;
+    }
 `;

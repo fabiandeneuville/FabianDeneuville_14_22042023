@@ -8,7 +8,7 @@ function Header(){
     return (
         <PageHeader>
             <h1>HRnet</h1>
-            <Link to={ location.pathname === '/' ? '/employees' : '/'}>{location.pathname === '/' ? 'View Current Employee' : 'Create employee'}</Link>
+            <Link style={{ color: "black"}} to={ location.pathname === '/' ? '/employees' : '/'}>{location.pathname === '/' ? 'View Current Employees' : 'Create employee'}</Link>
         </PageHeader>
     );
 }

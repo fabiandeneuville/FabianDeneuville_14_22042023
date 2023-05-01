@@ -1,12 +1,10 @@
 import PropTypes from 'prop-types';
 import { useState } from "react";
-import CaretDown from '../../assets/caret-down.svg'
 import { 
     DropDownSelect, 
     Selected, 
     DropDownSelectList, 
     Option, 
-    Caret 
 } from "./styled";
 
 function CustomDropDown(props) {
@@ -40,7 +38,6 @@ function CustomDropDown(props) {
             <Selected onClick={handleClick}>
                 {optionselected}
             </Selected>
-            <Caret src={CaretDown}/>
             {isOpen && (
                 <div>
                     <DropDownSelectList
