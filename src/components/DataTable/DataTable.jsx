@@ -48,36 +48,19 @@ function EmployeesTable({data, columns}) {
         const tableDataToSort = [...tableData]
         const sortItems = Object.keys(data[0]);
         const sortBy = sortItems[index];
-
-        if(mode === 'ascending'){
-            tableDataToSort.sort((a, b) => {
-                const _a = a[sortBy].toLowerCase();
-                const _b = b[sortBy].toLowerCase();
-                if(_a <_b){
-                    return -1;
-                }
-                if(_a > _b){
-                    return 1;
-                }
-                return 0;
-            })
-            setTableData(tableDataToSort);
-        } else if (mode === 'descending'){
-            tableDataToSort.sort((a, b) => {
-                const _a = a[sortBy].toLowerCase();
-                const _b = b[sortBy].toLowerCase();
-                if(_a >_b){
-                    return -1;
-                }
-                if(_a < _b){
-                    return 1;
-                }
-                return 0;
-            })
-            setTableData(tableDataToSort);
-        } else {
-            return;
-        }
+        const operator = mode === 'ascending' ? 1 : - 1;
+        tableDataToSort.sort((a, b) => {
+            const _a = a[sortBy].toLowerCase();
+            const _b = b[sortBy].toLowerCase();
+            if(_a <_b){
+                return -1 * operator;
+            }
+            if(_a > _b){
+                return 1 * operator;
+            }
+            return 0;
+        })
+        setTableData(tableDataToSort);
     }
 
     return (
