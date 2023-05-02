@@ -9,7 +9,7 @@ import {
 
 function CustomDropDown(props) {
 
-    const { options, selected, onChange, name } = props
+    const { options, selected, onChange, name, id } = props
 
     const [isOpen, setIsOpen] = useState(false);
     const [optionselected, setOptionSelected] = useState(selected);
@@ -34,7 +34,7 @@ function CustomDropDown(props) {
     };
 
     return (
-        <DropDownSelect>
+        <DropDownSelect id={id} role="select">
             <Selected onClick={handleClick}>
                 {optionselected}
             </Selected>
@@ -64,5 +64,6 @@ CustomDropDown.propTypes = {
     options: PropTypes.array.isRequired,
     selected: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
-    name: PropTypes.string.isRequired
+    name: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired
 };

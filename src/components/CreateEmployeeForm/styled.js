@@ -6,7 +6,7 @@ export const FormContainer = styled.div`
 `;
 
 export const Form = styled.form`
-    margin: 30px 0 auto 0;
+    margin: 15px 0 auto 0;
     width: 100%;
     display: flex;
     flex-direction: column;

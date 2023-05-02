@@ -84,7 +84,7 @@ function EmployeesTable({data, columns}) {
         <>
             <SearchInputGroup>
                 <SearchLabel htmlFor="search">Search : </SearchLabel>
-                <SearchInput name="search" type="text" onInput={(e) => filterResults(e.target.value)}/>
+                <SearchInput id="search" name="search" type="text" onInput={(e) => filterResults(e.target.value)}/>
             </SearchInputGroup>
             <DataTableWrapper>
                 <Table>

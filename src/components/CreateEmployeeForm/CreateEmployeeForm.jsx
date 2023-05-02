@@ -75,6 +75,7 @@ function CreateEmployeeForm(){
                             First Name
                         </Label>
                         <Input
+                        id={"firstName"}
                         name={"firstName"}
                         value={values.firstName}
                         onChange={handleChange}
@@ -88,6 +89,7 @@ function CreateEmployeeForm(){
                             Last Name
                         </Label>
                         <Input
+                        id={"lastName"}
                         name={"lastName"}
                         value={values.lastName}
                         onChange={handleChange}
@@ -101,6 +103,7 @@ function CreateEmployeeForm(){
                             Birth Date
                         </Label>
                         <DatePicker
+                        id={"birthDate"}
                         name={"birthDate"}
                         value={values.birthDate}
                         onChange={handleChange}
@@ -114,6 +117,7 @@ function CreateEmployeeForm(){
                             Start Date
                         </Label>
                         <DatePicker
+                        id={"startDate"}
                         name={"startDate"}
                         value={values.startDate}
                         onChange={handleChange}
@@ -129,6 +133,7 @@ function CreateEmployeeForm(){
                                 Street
                             </Label>
                             <Input
+                            id={"street"}
                             name={"street"}
                             value={values.street}
                             onChange={handleChange}
@@ -142,6 +147,7 @@ function CreateEmployeeForm(){
                                 City
                             </Label>
                             <Input
+                            id={"city"}
                             name={"city"}
                             value={values.city}
                             onChange={handleChange}
@@ -155,14 +161,12 @@ function CreateEmployeeForm(){
                                 State
                             </Label>
                             <CustomDropDown
-                            name={'state'}
+                            id={"state"}
+                            name={"state"}
                             options={states}
                             selected={states[0]}
                             onChange={handleChange}
                             />
-                            {errors.state && 
-                                <p>ERROR</p>
-                            }
                     </InputGroup>
                         <InputGroup>
                             <Label
@@ -171,6 +175,7 @@ function CreateEmployeeForm(){
                                 Zip Code
                             </Label>
                             <Input
+                            id={"zipCode"}
                             name={"zipCode"}
                             value={values.zipCode}
                             onChange={handleChange}
@@ -185,7 +190,8 @@ function CreateEmployeeForm(){
                             Department
                         </Label>
                         <CustomDropDown
-                        name={'department'}
+                        id={"department"}
+                        name={"department"}
                         options={departments}
                         selected={departments[0]}
                         onChange={handleChange}
