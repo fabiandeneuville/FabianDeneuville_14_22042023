@@ -34,7 +34,11 @@ function CustomDropDown(props) {
     };
 
     return (
-        <DropDownSelect id={id} role="listbox" name={props.name}>
+        <DropDownSelect id={id} role="listbox" name={props.name}
+        aria-expanded={isOpen}
+        aria-labelledby={`Selection ${props.name}`}
+        aria-describedby={"Selection"}
+        >
             <Selected onClick={handleClick}>
                 {optionselected}
             </Selected>
@@ -45,7 +49,7 @@ function CustomDropDown(props) {
                     >
                         {options.map((option, index) => (
                             <Option
-                            role="listitem"
+                            role="option"
                             key={index}
                             onClick={() => handleOptionClick(index)}
                             >
