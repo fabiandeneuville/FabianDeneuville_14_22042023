@@ -18,9 +18,22 @@ function CustomDropDown(props) {
         setIsOpen(!isOpen);
     };
 
+    const handleKeyPress = (e) => {
+        if(e.code === "Enter"){
+            setIsOpen(!isOpen)
+        }
+    }
+
     const handleOptionClick = (index) => {
         setIsOpen(false);
         onSelect(options[index]);
+    };
+
+    const handleOptionKeyPress = (e, index) => {
+        if(e.code === "Enter"){
+            setIsOpen(false);
+            onSelect(options[index]);
+        }
     };
 
     const onSelect = (option) => {
@@ -38,6 +51,8 @@ function CustomDropDown(props) {
         aria-expanded={isOpen}
         aria-labelledby={`Selection ${props.name}`}
         aria-describedby={"Selection"}
+        tabIndex={0}
+        onKeyDown={handleKeyPress}
         >
             <Selected onClick={handleClick}>
                 {optionselected}
@@ -49,9 +64,11 @@ function CustomDropDown(props) {
                     >
                         {options.map((option, index) => (
                             <Option
+                            tabIndex={0}    
                             role="option"
                             key={index}
                             onClick={() => handleOptionClick(index)}
+                            onKeyDown={(e) => handleOptionKeyPress(e, index)}
                             >
                                 {option}
                             </Option>

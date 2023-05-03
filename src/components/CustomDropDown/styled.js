@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const DropDownSelect = styled.div`
     border: 1px solid #333;
     cursor: pointer;
+    focusable: true
 `;
 
 export const Selected = styled.div`
