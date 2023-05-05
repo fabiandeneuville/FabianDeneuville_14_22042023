@@ -58,7 +58,7 @@ function employee(state = initialState, action){
         case CREATE_EMPLOYEE_FAILURE :
             return {
                 ...state,
-                error: action.payload.erre
+                error: action.payload.error
             }
         default :
             return {
